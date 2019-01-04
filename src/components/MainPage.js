@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import TextMobileStepper from './mainpage/Steper';
 import Certcardblock from './mainpage/Certcardblock';
 import Consumers from './mainpage/Consumers';
+import Partners from './mainpage/Partners';
 
 class MainPage extends Component {
 
@@ -11,6 +12,7 @@ class MainPage extends Component {
       <Fragment>
         <Certcardblock />
         <Consumers />
+        <Partners />
       </Fragment>
     )
   }
