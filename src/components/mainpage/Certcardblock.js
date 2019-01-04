@@ -28,7 +28,6 @@ class Certcardblock extends Component {
           >
           Вам подарили похожий сертификат?
             Мы рады что нам доверили Вас поздравить. Сделаем все что бы вы получили удовольствие от вашего подарка. 
-            Введите пожалуйста код сертификата.
             </Typography>
           <img 
             style = {{ 
@@ -48,7 +47,7 @@ class Certcardblock extends Component {
 
          <TextField
             id="standard-full-width"
-            label="Введите пожалуйста код сертификата:"
+            label="Введите код сертификата:"
             style={{ margin: 8, width: '80%' }}
             placeholder="XXXX-XXXXXX"
             margin="normal"

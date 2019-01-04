@@ -82,7 +82,7 @@ class Layout extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              Магазин отличных подарков.
+              Магазин подарков
             </Typography>
           </Toolbar>
         </AppBar>
