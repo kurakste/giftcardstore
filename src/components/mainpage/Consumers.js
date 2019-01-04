@@ -22,7 +22,7 @@ class Consumers extends Component {
           </Typography>
           <img 
           style = {{ 
-            width: '90%', marginLeft: '5%', marginBottom: 0}}
+            width: '90%', marginLeft: '5%', marginTop: 20}}
             src = './img/main_cover_1200.jpeg' 
             />
             <Typography
