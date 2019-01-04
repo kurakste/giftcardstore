@@ -1,22 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+import {
+    AppBar, CssBaseline, Divider, Drawer, Hidden, IconButton,
+    Toolbar, Typography, MenuList, MenuItem,
+  } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import { MenuList, MenuItem } from '@material-ui/core';
 import { Link, withRouter } from 'react-router-dom'; 
 import { compose } from 'recompose';
 
@@ -66,23 +55,20 @@ class Layout extends React.Component {
   render() {
     const { classes, theme, location: { pathname } } = this.props;
     let { children } = this.props;
-    console.log(pathname);
-
     const drawer = (
       <div>
-        <div className={classes.toolbar} />
+        <img style = {{}} src='/img/logo.svg' />
         <Divider />
         <MenuList>
-          <MenuItem component = {Link} to='/' selected = { '/' === pathname }>Home</MenuItem>
-          <MenuItem component = {Link} to='/catalog'  selected = { '/catalog' === pathname }>Catalog</MenuItem>
-          <MenuItem component = {Link} to='/about' selected = { '/about' === pathname }>About</MenuItem>
+          <MenuItem component = {Link} to='/' selected = { '/' === pathname }>Главная</MenuItem>
+          <MenuItem component = {Link} to='/catalog' selected = { '/catalog' === pathname }>Магазин</MenuItem>
+          <MenuItem component = {Link} to='/cards' selected = { '/card' === pathname }>Владельцам карт</MenuItem>
+          <MenuItem component = {Link} to='/about' selected = { '/about' === pathname }>Информация</MenuItem>
         </MenuList>
-
       </div>
     );
 
     return (
-
       <div className={classes.root}>
         <CssBaseline />
         <AppBar position="fixed" className={classes.appBar}>
@@ -96,7 +82,7 @@ class Layout extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              Material UI Template
+              Магазин отличных подарков.
             </Typography>
           </Toolbar>
         </AppBar>
@@ -136,14 +122,6 @@ class Layout extends React.Component {
     );
   }
 }
-
-Layout.propTypes = {
-  classes: PropTypes.object.isRequired,
-  // Injected by the documentation to work in an iframe.
-  // You won't need it on your project.
-  container: PropTypes.object,
-  theme: PropTypes.object.isRequired,
-};
 
 export default compose(
   withStyles(styles, { withTheme: true }),
