@@ -24,8 +24,8 @@ const styles = theme => ({
     float: 'left',
   },
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+//    height: 0,
+    paddingTop: '100%', // 16:9
   },
   actions: {
     display: 'flex',
@@ -64,7 +64,7 @@ class Prodcard extends React.Component {
             </IconButton>
           }
           title={product.name}
-          subheader="здесь нужно выводить тип продукта"
+          subheader={ (!product.material) ? 'СЕРТИФИКАТ' : 'ТОВАР' }
         />
         <CardMedia
           className={classes.media}
@@ -73,7 +73,7 @@ class Prodcard extends React.Component {
         />
         <CardContent>
           <Typography component="p">
-            { product.description }
+            { product.short_description }
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
@@ -97,7 +97,7 @@ class Prodcard extends React.Component {
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
-            Здесь нужно добавить полное описание квеста и его условия.
+            { product.description }
             </Typography>
           </CardContent>
         </Collapse>
