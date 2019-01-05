@@ -9,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Link, withRouter } from 'react-router-dom'; 
 import { compose } from 'recompose';
 
-const drawerWidth = 240;
+const drawerWidth = 180;
 
 const styles = theme => ({
   root: {
