@@ -63,6 +63,8 @@ class Layout extends React.Component {
           <MenuItem component = {Link} to='/' selected = { '/' === pathname }>Главная</MenuItem>
           <MenuItem component = {Link} to='/catalog' selected = { '/catalog' === pathname }>Магазин</MenuItem>
           <MenuItem component = {Link} to='/cards' selected = { '/card' === pathname }>Владельцам карт</MenuItem>
+          <MenuItem component = {Link} to='/support' selected = { '/support' === pathname }>Поддержка</MenuItem>
+          <MenuItem component = {Link} to='/feedback' selected = { '/feedback' === pathname }>Обратная связь</MenuItem>
           <MenuItem component = {Link} to='/about' selected = { '/about' === pathname }>Информация</MenuItem>
         </MenuList>
       </div>
