@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import {
-    Paper, Typography, Button, TextField 
+    Paper, Typography, Button,  
   } from '@material-ui/core';
 
 class Consumers extends Component {
@@ -23,7 +23,7 @@ class Consumers extends Component {
           <img 
           style = {{ 
             width: '90%', marginLeft: '5%', marginTop: 20}}
-            src = './img/main_cover_1200.jpeg' 
+            src = './img/main_cover_1200.jpeg' alt = 'main_cover_image' 
             />
             <Typography
             align = 'justify'

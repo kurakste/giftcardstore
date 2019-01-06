@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     AppBar, CssBaseline, Divider, Drawer, Hidden, IconButton,
     Toolbar, Typography, MenuList, MenuItem,
@@ -57,7 +56,7 @@ class Layout extends React.Component {
     let { children } = this.props;
     const drawer = (
       <div>
-        <img style = {{}} src='/img/logo.svg' />
+        <img style = {{}} src='/img/logo.svg' alt='gift_logo'/>
         <Divider />
         <MenuList>
           <MenuItem component = {Link} to='/' selected = { '/' === pathname }>Главная</MenuItem>

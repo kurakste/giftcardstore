@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import products from '../itemsStub';
-import cities from '../citylist.js';
 import Prodcard from './catalog/Prodcard';
+import FilterDialog from './catalog/FilterDialog';
 
 class Catalog extends Component {
   constructor(props) {
@@ -11,16 +11,13 @@ class Catalog extends Component {
   }
   
   render() {
-    const li = this.state.products.map(item => {
-      return (<li key={item.id}>{item.name}</li>)
-    });
-    console.log('====2', li);
     
-    const cat = this.state.products.map( item => <Prodcard product = { item } /> );
+    const cat = this.state.products.map( item => <Prodcard key = { item.id } product = { item } /> );
     
     return (
       <Fragment>
       {cat}
+      <FilterDialog />
       </Fragment>
     )
   }

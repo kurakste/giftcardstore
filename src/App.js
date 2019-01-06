@@ -3,6 +3,10 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
 import MainPage from './components/MainPage';
 import Catalog from './components/Catalog';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFilter} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faFilter)
 
 class App extends Component {
   render() {

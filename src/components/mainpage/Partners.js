@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import {
-    Paper, Typography, Button, TextField 
+    Paper, Typography, Button 
   } from '@material-ui/core';
+
+import FormattedInput from './PhoneInput';
 
 class Partners extends Component {
   render() {
@@ -21,9 +23,12 @@ class Partners extends Component {
             Партнерам
           </Typography>
           <img 
-          style = {{ 
-            width: '30%', marginLeft: '5%', marginTop: 20}}
+            style = {{ 
+              width: '30%', marginLeft: '5%', marginTop: 20
+            }}
             src = './img/partnership.jpg' 
+            alt = 'partners'
+
             />
             <Typography
             align = 'justify'
@@ -34,19 +39,11 @@ class Partners extends Component {
 
           </Typography>
           <div>
-          <TextField
-            id="standard-textarea"
-            label="Введите номер телефона"
-            placeholder="+7-XXX-XXX-XX-XX"
-            multiline
-            margin="normal"
-            style = {{width: '80%'}}
-          />
+          <FormattedInput />
           </div>
           <Button 
             style = {{ margin: 5}}
             variant="contained"
-            color="primary"
           >
             Заказать звонок
           </Button>

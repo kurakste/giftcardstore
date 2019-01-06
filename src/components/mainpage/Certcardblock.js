@@ -32,8 +32,8 @@ class Certcardblock extends Component {
           <img 
             style = {{ 
               width: '90%', marginLeft: '5%', marginBottom: 0}}
-
-            src = './img/vaucher-exp.png' 
+              src = './img/vaucher-exp.png' 
+              alt = 'gift_cards'
           />
             
           <Typography
