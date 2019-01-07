@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CitySelector from './CitySelector';
 import Cat1selector from './Cat1selector';
+import Cat2selector from './Cat2selector';
 
 
 const styles = theme => ({
@@ -60,6 +61,7 @@ class FilterDialog extends React.Component {
             </DialogContentText>
             <CitySelector />
             <Cat1selector />
+            <Cat2selector />
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">

@@ -17,6 +17,13 @@ const styles = theme => ({
     minWidth: 120,
     maxWidth: 500,
   },
+  chips: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  chip: {
+    margin: theme.spacing.unit / 4,
+  },
   noLabel: {
     marginTop: theme.spacing.unit * 3,
   },
@@ -25,13 +32,14 @@ const styles = theme => ({
 
 const names = [
   'все',
-  'Другу',
-  'Подруге',
-  'Коллеге',
-  'Родителям',
+  'Драйв',
+  'Приключение',
+  'Релакс',
+  'Экстрим',
+  'все',
 ];
 
-class Cat2selector extends React.Component {
+class Cat1selector extends React.Component {
   state = {
     name: names[0],
   };
@@ -60,7 +68,7 @@ class Cat2selector extends React.Component {
       <div className={classes.root}>
         <FormControl className={classes.formControl}>
           <InputLabel shrink htmlFor="select-multiple-native">
-            Для кого подарок:
+            Стиль подарока:
           </InputLabel>
           <Select
             multiple = {false}
@@ -83,8 +91,8 @@ class Cat2selector extends React.Component {
   }
 }
 
-Cat2selector.propTypes = {
+Cat1selector.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Cat2selector);
+export default withStyles(styles, { withTheme: true })(Cat1selector);
