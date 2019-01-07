@@ -54,7 +54,7 @@ class FilterDialog extends React.Component {
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Фильтры</DialogTitle>
+          <DialogTitle style =  {{ textAlign: 'center' }} id="form-dialog-title">Фильтры</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Уточните город:

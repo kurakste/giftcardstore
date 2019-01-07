@@ -4,9 +4,9 @@ import Layout from './components/Layout';
 import MainPage from './components/MainPage';
 import Catalog from './components/Catalog';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFilter} from '@fortawesome/free-solid-svg-icons'
+import { faFilter, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faFilter)
+library.add(faFilter,faShoppingCart )
 
 class App extends Component {
   render() {
