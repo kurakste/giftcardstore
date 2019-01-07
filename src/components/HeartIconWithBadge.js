@@ -27,7 +27,7 @@ function FavoriteIconWithBadge(props) {
       color = 'inherit'
       style = {{ 
         position: 'absolute',
-        top: 10,
+        top: 5,
         right: 10
       }}  
     >
