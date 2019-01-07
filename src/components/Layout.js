@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/core/styles';
 import { Link, withRouter } from 'react-router-dom'; 
 import { compose } from 'recompose';
+import HartIconWithBadge from './HeartIconWithBadge';
 
 const drawerWidth = 180;
 
@@ -85,6 +86,7 @@ class Layout extends React.Component {
             <Typography variant="h6" color="inherit" noWrap>
               Магазин подарков
             </Typography>
+            <HartIconWithBadge />
           </Toolbar>
         </AppBar>
         <nav className={classes.drawer}>
