@@ -34,6 +34,7 @@ function FavoriteIconWithBadge(props) {
 
       <FontAwesomeIcon icon={ faHeart } size="sm"/>
       <Badge badgeContent={4} color="primary" classes={{ badge: classes.badge }}>
+       
       </Badge>
     </IconButton>
   );
