@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import Certcardblock from './mainpage/Certcardblock';
-import Consumers from './mainpage/Consumers';
-import Partners from './mainpage/Partners';
+import Certcardblock from './Certcardblock';
+import Consumers from './Consumers';
+import Partners from './Partners';
 
 class MainPage extends Component {
 

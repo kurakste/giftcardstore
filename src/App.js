@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'; 
 import Layout from './components/Layout';
-import MainPage from './components/MainPage';
+import Mainpage from './components/mainpage';
 import Catalog from './components/Catalog';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFilter, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
@@ -15,7 +15,7 @@ class App extends Component {
         <div className="App">
           <Layout>
             <Switch>
-              <Route exact path='/' component ={ MainPage } />
+              <Route exact path='/' component ={ Mainpage } />
               <Route exact path='/catalog' component = { Catalog } />
               <Route exact path='/cards' render={ () => { return (<div> Hi from cards </div>)}} />
               <Route exact path='/support' render={ () => { return (<div> Hi from support </div>)}} />
