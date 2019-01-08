@@ -16,6 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux';
 
 
 const styles = theme => ({
@@ -54,6 +55,11 @@ class Prodcard extends React.Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
+  handleFavoriteClick = () => {
+    console.log(this.props.product);
+    this.props.onAddToFav(this.props.product);
+  }
+
   render() {
     const { classes, product } = this.props;
 
@@ -79,8 +85,8 @@ class Prodcard extends React.Component {
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
-          <IconButton aria-label="Add to favorites">
-            <FavoriteIcon />
+          <IconButton  aria-label="Add to favorites">
+            <FavoriteIcon onClick={this.handleFavoriteClick}/>
           </IconButton>
           <IconButton aria-label="Share">
             <ShareIcon />
@@ -112,4 +118,12 @@ Prodcard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Prodcard);
+export default connect(
+  state => state,
+  dispatch => ({
+    onAddToFav: (product) => { 
+      dispatch({ type: 'ADD_TO_FAV', payload: product })
+    } 
+  }),
+  )
+(withStyles(styles)(Prodcard));
