@@ -22,7 +22,7 @@ class Fabicons extends  Component {
     return (
       <div>
         <Fab color="primary" aria-label="Filter" className={classes.fab_plus}>
-        <FontAwesomeIcon icon="filter" />
+          <FontAwesomeIcon icon="filter" />
         </Fab>
       </div>
     );

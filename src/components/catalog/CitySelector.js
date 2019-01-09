@@ -113,13 +113,12 @@ const styles = theme => ({
 
 
 
-function handleChangeCity() {
-  console.log('===== handleCityCelector:', this.selectedItem);
-  //    this.props.onChangeCity('kzkz'); 
-} 
-
 class CitySelector extends Component {
 
+  handleChangeCity = () => {
+    const cityfield = document.getElementById('downshift-simple-input')
+    this.props.onChangeCity(cityfield.value); 
+  } 
   
   render() {
 
@@ -130,7 +129,7 @@ class CitySelector extends Component {
       <div className={classes.root}>
         <Downshift 
 
-        onSelect={ handleChangeCity }
+        onSelect={ this.handleChangeCity }
         selectedItem = { city }
         id="downshift-simple">
         {({
