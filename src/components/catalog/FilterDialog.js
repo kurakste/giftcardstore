@@ -8,6 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Fab from '@material-ui/core/Fab';
 import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//-----------------------------------------------------------------
 import CitySelector from './CitySelector';
 import Cat1selector from './Cat1selector';
 import Cat2selector from './Cat2selector';

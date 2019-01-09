@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deburr from 'lodash/deburr';
 import Downshift from 'downshift';
@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
+import { connect } from 'react-redux';
 
 const suggestions = [
   { label: 'Волгоград' },
@@ -110,19 +111,28 @@ const styles = theme => ({
   },
 });
 
-const onChnageCity = (input) => {
-  //It will be fierd when new sity will be selected.
-  console.log('changed city:', input);
-}
-function CitySelector(props) {
-  const { classes } = props;
 
-  return (
-    <div className={classes.root}>
-      <Downshift 
-      onSelect={onChnageCity}
-      selectedItem = 'Волгоград'
-      id="downshift-simple">
+
+function handleChangeCity() {
+  console.log('===== handleCityCelector:', this.selectedItem);
+  //    this.props.onChangeCity('kzkz'); 
+} 
+
+class CitySelector extends Component {
+
+  
+  render() {
+
+    const { classes, city } = this.props;
+    console.log('=====CitySelector:', this.props);
+
+    return (
+      <div className={classes.root}>
+        <Downshift 
+
+        onSelect={ handleChangeCity }
+        selectedItem = { city }
+        id="downshift-simple">
         {({
           getInputProps,
           getItemProps,
@@ -132,38 +142,46 @@ function CitySelector(props) {
           isOpen,
           selectedItem,
         }) => (
-          <div className={classes.container}>
-            {renderInput({
-              fullWidth: true,
-              classes,
-              InputProps: getInputProps({
-                placeholder: 'Начните набирать название города',
-              }),
-            })}
-            <div {...getMenuProps()}>
-              {isOpen ? (
-                <Paper className={classes.paper} square>
-                  {getSuggestions(inputValue).map((suggestion, index) =>
-                    renderSuggestion({
-                      suggestion,
-                      index,
-                      itemProps: getItemProps({ item: suggestion.label }),
-                      highlightedIndex,
-                      selectedItem,
-                    }),
-                  )}
-                </Paper>
-              ) : null}
-            </div>
-          </div>
+        <div className={classes.container}>
+        {renderInput({
+          fullWidth: true,
+          classes,
+          InputProps: getInputProps({
+            placeholder: 'Начните набирать название города',
+          }),
+        })}
+        <div {...getMenuProps()}>
+        {isOpen ? (
+          <Paper className={classes.paper} square>
+          {getSuggestions(inputValue).map((suggestion, index) =>
+                                          renderSuggestion({
+                                            suggestion,
+                                            index,
+                                            itemProps: getItemProps({ item: suggestion.label }),
+                                            highlightedIndex,
+                                            selectedItem,
+                                          }),
+                                         )}
+                                         </Paper>
+        ) : null}
+        </div>
+        </div>
         )}
-      </Downshift>
-    </div>
-  );
+        </Downshift>
+      </div>
+    );
+  }
 }
 
 CitySelector.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(CitySelector);
+export default 
+  connect(state => state,
+  dispatch => ({
+    onChangeCity: (city) => { 
+      dispatch({ type: 'CHANGE_CITY', payload: city })
+    } 
+  }),
+         )(withStyles(styles)(CitySelector));

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom'; 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFilter, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+//==========================================================================
 import Layout from './components/layout';
 import Mainpage from './components/mainpage';
 import Catalog from './components/catalog';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFilter, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faFilter,faShoppingCart )
 
