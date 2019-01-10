@@ -7,7 +7,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Fab from '@material-ui/core/Fab';
 import { withStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //-----------------------------------------------------------------
 import CitySelector from './CitySelector';
 import Cat1selector from './Cat1selector';
@@ -27,17 +27,21 @@ const styles = theme => ({
 });
 
 class FilterDialog extends React.Component {
-  state = {
-    open: false,
-  };
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
 
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+    this.handleClickOpen = () => {
+      this.setState({ open: true });
+    };
+
+    this.handleClose = () => {
+      this.setState({ open: false });
+    };
+  }
 
   render() {
     const { classes } = this.props;
@@ -45,7 +49,7 @@ class FilterDialog extends React.Component {
       <div>
         <div>
           <Fab color="primary" aria-label="Filter" className={classes.fab_plus} onClick={this.handleClickOpen}>
-          <FontAwesomeIcon icon="filter" />
+            <FontAwesomeIcon icon="filter" />
           </Fab>
         </div>
 

@@ -6,8 +6,7 @@ import FilterDialog from './FilterDialog';
 class Catalog extends Component {
   constructor(props) {
     super(props);
-    this.state = {products: products}
-    console.log('====1:', this);
+    this.state = {products: products};
   }
   
   render() {
@@ -16,10 +15,10 @@ class Catalog extends Component {
     
     return (
       <Fragment>
-      {cat}
-      <FilterDialog />
+        {cat}
+        <FilterDialog />
       </Fragment>
-    )
+    );
   }
 }
 export default Catalog;

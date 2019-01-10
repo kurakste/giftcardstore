@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-    AppBar, CssBaseline, Divider, Drawer, Hidden, IconButton,
-    Toolbar, Typography, MenuList, MenuItem,
-  } from '@material-ui/core';
+  AppBar, CssBaseline, Divider, Drawer, Hidden, IconButton,
+  Toolbar, Typography, MenuList, MenuItem,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/core/styles';
 import { Link, withRouter } from 'react-router-dom'; 
 import { compose } from 'recompose';
+//====================================================
 import HartIconWithBadge from './HeartIconWithBadge';
 
 const drawerWidth = 180;
@@ -44,13 +45,15 @@ const styles = theme => ({
 });
 
 class Layout extends React.Component {
-  state = {
-    mobileOpen: false,
-  };
-
-  handleDrawerToggle = () => {
-    this.setState(state => ({ mobileOpen: !state.mobileOpen }));
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      mobileOpen: false,
+    };
+    this.handleDrawerToggle = () => {
+      this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+    };
+  }
 
   render() {
     const { classes, theme, location: { pathname } } = this.props;
@@ -119,7 +122,7 @@ class Layout extends React.Component {
         </nav>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-            { children }
+          { children }
         </main>
       </div>
     );

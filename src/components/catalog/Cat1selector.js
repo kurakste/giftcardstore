@@ -32,26 +32,28 @@ const names = [
 ];
 
 class Cat2selector extends React.Component {
-  state = {
-    name: names[0],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: names[0],
+    };
+    this.handleChange = event => {
+      this.setState({ name: event.target.value });
+    };
 
-  handleChange = event => {
-    this.setState({ name: event.target.value });
-  };
-
-  handleChangeMultiple = event => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
+    this.handleChangeMultiple = event => {
+      const { options } = event.target;
+      const value = [];
+      for (let i = 0, l = options.length; i < l; i += 1) {
+        if (options[i].selected) {
+          value.push(options[i].value);
+        }
       }
-    }
-    this.setState({
-      name: value,
-    });
-  };
+      this.setState({
+        name: value,
+      });
+    };
+  }
 
   render() {
     const { classes } = this.props;

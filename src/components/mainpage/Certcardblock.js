@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import {
-    Paper, Typography, Button, TextField 
-  } from '@material-ui/core';
+  Paper, Typography, Button, TextField 
+} from '@material-ui/core';
 
 class Certcardblock extends Component {
   render() {
@@ -21,31 +21,32 @@ class Certcardblock extends Component {
             СЕРТИФИКАТ
           </Typography>
           <Typography
-          align = 'justify'
-          color = 'primary'
-          variant = 'body1'
-          style = {typeBodyStyle}
+            align = 'justify'
+            color = 'primary'
+            variant = 'body1'
+            style = {typeBodyStyle}
           >
           Вам подарили похожий сертификат?
             Мы рады что нам доверили Вас поздравить. Сделаем все что бы вы получили удовольствие от вашего подарка. 
-            </Typography>
+          </Typography>
           <img 
             style = {{ 
-              width: '90%', marginLeft: '5%', marginBottom: 0}}
-              src = './img/vaucher-exp.png' 
-              alt = 'gift_cards'
+              width: '90%', marginLeft: '5%', marginBottom: 0
+            }}
+            src = './img/vaucher-exp.png' 
+            alt = 'gift_cards'
           />
             
           <Typography
-          align = 'justify'
-          color = 'primary'
-          variant = 'body1'
-          style = {typeBodyStyle}
+            align = 'justify'
+            color = 'primary'
+            variant = 'body1'
+            style = {typeBodyStyle}
           >
           
           </Typography>
 
-         <TextField
+          <TextField
             id="standard-full-width"
             label="Введите код сертификата:"
             style={{ margin: 8, width: '80%' }}
@@ -54,12 +55,12 @@ class Certcardblock extends Component {
             InputLabelProps={{
               shrink: true,
             }}
-        />
+          />
           <Typography
-          align = 'justify'
-          color = 'primary'
-          variant = 'body1'
-          style = {typeBodyStyle}
+            align = 'justify'
+            color = 'primary'
+            variant = 'body1'
+            style = {typeBodyStyle}
           >
 
             Кнопка "Уточнить" переведет вас на страницу с подробным описанием товара. Кнопка "активировать" - активация подарка. Нажмите ее и мы свяжимся для уточнения деталей организации вашего мероприятия.
@@ -82,7 +83,7 @@ class Certcardblock extends Component {
         </Paper>
 
       </Fragment>
-    )
+    );
   }
 }
 

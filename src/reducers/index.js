@@ -5,4 +5,4 @@ import city from './city.js';
 export default combineReducers({
   favorites,
   city
-})
+});

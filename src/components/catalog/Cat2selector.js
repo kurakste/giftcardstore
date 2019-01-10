@@ -29,7 +29,6 @@ const styles = theme => ({
   },
 });
 
-
 const names = [
   'все',
   'Драйв',
@@ -40,26 +39,30 @@ const names = [
 ];
 
 class Cat1selector extends React.Component {
-  state = {
-    name: names[0],
-  };
 
-  handleChange = event => {
-    this.setState({ name: event.target.value });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: names[0],
+    };
+    this.handleChange = event => {
+      this.setState({ name: event.target.value });
+    };
 
-  handleChangeMultiple = event => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
+    this.handleChangeMultiple = event => {
+      const { options } = event.target;
+      const value = [];
+      for (let i = 0, l = options.length; i < l; i += 1) {
+        if (options[i].selected) {
+          value.push(options[i].value);
+        }
       }
-    }
-    this.setState({
-      name: value,
-    });
-  };
+      this.setState({
+        name: value,
+      });
+    };
+  }
+
 
   render() {
     const { classes } = this.props;

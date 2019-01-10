@@ -11,8 +11,6 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__ ()
 );
 
-console.log('===Index:', store);
-
 ReactDOM.render(
   <Provider store = {store} >
     <App /> 

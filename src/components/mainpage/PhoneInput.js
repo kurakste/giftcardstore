@@ -28,7 +28,10 @@ function TextMaskCustom(props) {
       ref={ref => {
         inputRef(ref ? ref.inputElement : null);
       }}
-      mask={['+', '7', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+      mask={[
+        '+', '7', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, 
+        '-', /\d/, /\d/, '-', /\d/, /\d/
+      ]}
       placeholderChar={'\u2000'}
       showMask
     />
@@ -65,15 +68,18 @@ NumberFormatCustom.propTypes = {
 };
 
 class FormattedInputs extends React.Component {
-  state = {
-    textmask: '+7(XXX) XXX-XX-XX',
-  };
-
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      textmask: '+7(XXX) XXX-XX-XX',
+    };
+    this.handleChange = name => event => {
+      this.setState({
+        [name]: event.target.value,
+      });
+    };
+  
+  }
 
   render() {
     const { classes } = this.props;

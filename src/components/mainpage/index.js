@@ -14,7 +14,7 @@ class MainPage extends Component {
         <Consumers />
         <Partners />
       </Fragment>
-    )
+    );
   }
 }
 export default MainPage;

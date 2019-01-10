@@ -68,15 +68,15 @@ function getSuggestions(value) {
   return inputLength === 0
     ? []
     : suggestions.filter(suggestion => {
-        const keep =
+      const keep =
           count < 5 && suggestion.label.slice(0, inputLength).toLowerCase() === inputValue;
 
-        if (keep) {
-          count += 1;
-        }
+      if (keep) {
+        count += 1;
+      }
 
-        return keep;
-      });
+      return keep;
+    });
 }
 
 
@@ -114,58 +114,59 @@ const styles = theme => ({
 
 
 class CitySelector extends Component {
-
-  handleChangeCity = () => {
-    const cityfield = document.getElementById('downshift-simple-input')
-    this.props.onChangeCity(cityfield.value); 
-  } 
+  constructor(props) {
+    super(props);
+    this.handleChangeCity = () => {
+      const cityfield = document.getElementById('downshift-simple-input');
+      this.props.onChangeCity(cityfield.value); 
+    }; 
+  }
   
   render() {
 
     const { classes, city } = this.props;
-    console.log('=====CitySelector:', this.props);
 
     return (
       <div className={classes.root}>
         <Downshift 
 
-        onSelect={ this.handleChangeCity }
-        selectedItem = { city }
-        id="downshift-simple">
-        {({
-          getInputProps,
-          getItemProps,
-          getMenuProps,
-          highlightedIndex,
-          inputValue,
-          isOpen,
-          selectedItem,
-        }) => (
-        <div className={classes.container}>
-        {renderInput({
-          fullWidth: true,
-          classes,
-          InputProps: getInputProps({
-            placeholder: 'Начните набирать название города',
-          }),
-        })}
-        <div {...getMenuProps()}>
-        {isOpen ? (
-          <Paper className={classes.paper} square>
-          {getSuggestions(inputValue).map((suggestion, index) =>
-                                          renderSuggestion({
-                                            suggestion,
-                                            index,
-                                            itemProps: getItemProps({ item: suggestion.label }),
-                                            highlightedIndex,
-                                            selectedItem,
-                                          }),
-                                         )}
-                                         </Paper>
-        ) : null}
-        </div>
-        </div>
-        )}
+          onSelect={ this.handleChangeCity }
+          selectedItem = { city }
+          id="downshift-simple">
+          {({
+            getInputProps,
+            getItemProps,
+            getMenuProps,
+            highlightedIndex,
+            inputValue,
+            isOpen,
+            selectedItem,
+          }) => (
+            <div className={classes.container}>
+              {renderInput({
+                fullWidth: true,
+                classes,
+                InputProps: getInputProps({
+                  placeholder: 'Начните набирать название города',
+                }),
+              })}
+              <div {...getMenuProps()}>
+                {isOpen ? (
+                  <Paper className={classes.paper} square>
+                    {getSuggestions(inputValue).map((suggestion, index) =>
+                      renderSuggestion({
+                        suggestion,
+                        index,
+                        itemProps: getItemProps({ item: suggestion.label }),
+                        highlightedIndex,
+                        selectedItem,
+                      }),
+                    )}
+                  </Paper>
+                ) : null}
+              </div>
+            </div>
+          )}
         </Downshift>
       </div>
     );
@@ -177,10 +178,10 @@ CitySelector.propTypes = {
 };
 
 export default 
-  connect(state => state,
+connect(state => state,
   dispatch => ({
     onChangeCity: (city) => { 
-      dispatch({ type: 'CHANGE_CITY', payload: city })
+      dispatch({ type: 'CHANGE_CITY', payload: city });
     } 
   }),
-         )(withStyles(styles)(CitySelector));
+)(withStyles(styles)(CitySelector));

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import { withStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 
 const styles = theme => ({
@@ -28,20 +28,19 @@ class FavoriteIconWithBadge extends Component {
   render() {
     const { classes, favorites } = this.props;
     let badge = '';
-    console.log('===classes:', classes.icon);
     if ( favorites.length !=0 ) { 
-       badge = (<Badge badgeContent={ favorites.length } color="primary" classes={{ badge: classes.badge }}>
-                     <span></span> 
-                     </Badge>)
+      badge = (<Badge badgeContent={ favorites.length } color="primary" classes={{ badge: classes.badge }}>
+        <span></span> 
+      </Badge>);
     }
 
     return (
       <IconButton 
-      aria-label="Fav" 
-      color = 'inherit'
-      className ={ classes.icon } >
-      <FontAwesomeIcon icon={ faHeart } size="sm"/>
-      { badge } 
+        aria-label="Fav" 
+        color = 'inherit'
+        className ={ classes.icon } >
+        <FontAwesomeIcon icon={ faHeart } size="sm"/>
+        { badge } 
       </IconButton>
     );
   }
@@ -52,4 +51,4 @@ FavoriteIconWithBadge.propTypes = {
 };
 
 export default 
-  connect (state => state)(withStyles(styles)(FavoriteIconWithBadge));
+connect (state => state)(withStyles(styles)(FavoriteIconWithBadge));

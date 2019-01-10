@@ -14,8 +14,8 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 
 
@@ -27,7 +27,6 @@ const styles = theme => ({
     float: 'left',
   },
   media: {
-//    height: 0,
     paddingTop: '100%', // 16:9
   },
   actions: {
@@ -49,15 +48,18 @@ const styles = theme => ({
 });
 
 class Prodcard extends React.Component {
-  state = { expanded: false };
 
-  handleExpandClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }));
-  };
+  constructor(props) {
+    super(props);
+    this.state = { expanded: false };
 
-  handleFavoriteClick = () => {
-    console.log(this.props.product);
-    this.props.onAddToFav(this.props.product);
+    this.handleExpandClick = () => {
+      this.setState(state => ({ expanded: !state.expanded }));
+    };
+
+    this.handleFavoriteClick = () => {
+      this.props.onAddToFav(this.props.product);
+    };
   }
 
   render() {
@@ -105,7 +107,7 @@ class Prodcard extends React.Component {
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
-            { product.description }
+              { product.description }
             </Typography>
           </CardContent>
         </Collapse>
@@ -122,8 +124,7 @@ export default connect(
   state => state,
   dispatch => ({
     onAddToFav: (product) => { 
-      dispatch({ type: 'ADD_TO_FAV', payload: product })
+      dispatch({ type: 'ADD_TO_FAV', payload: product });
     } 
   }),
-  )
-(withStyles(styles)(Prodcard));
+)(withStyles(styles)(Prodcard));
