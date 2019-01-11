@@ -8,41 +8,10 @@ import { withStyles } from '@material-ui/core/styles';
 import { Link, withRouter } from 'react-router-dom'; 
 import { compose } from 'recompose';
 //====================================================
-import HartIconWithBadge from './HeartIconWithBadge';
+import HartIconWithBadge from './hearticonwithbadge';
+import { styles } from './styles';
 
-const drawerWidth = 180;
-
-const styles = theme => ({
-    root: {
-        display: 'flex',
-    },
-    drawer: {
-        [theme.breakpoints.up('sm')]: {
-            width: drawerWidth,
-            flexShrink: 0,
-        },
-    },
-    appBar: {
-        marginLeft: drawerWidth,
-        [theme.breakpoints.up('sm')]: {
-            width: `calc(100% - ${drawerWidth}px)`,
-        },
-    },
-    menuButton: {
-        marginRight: 20,
-        [theme.breakpoints.up('sm')]: {
-            display: 'none',
-        },
-    },
-    toolbar: theme.mixins.toolbar,
-    drawerPaper: {
-        width: drawerWidth,
-    },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing.unit * 3,
-    },
-});
+export const drawerWidth = 180;
 
 class Layout extends React.Component {
     constructor(props){
