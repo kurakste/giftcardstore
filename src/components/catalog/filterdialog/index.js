@@ -12,19 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CitySelector from './cityselector';
 import Cat1selector from './cat1selector';
 import Cat2selector from './cat2selector';
+import { styles } from './styles';
 
-
-const styles = theme => ({
-    fab_plus: {
-        position: 'fixed',
-        bottom: 10,
-        right: '5%',
-        margin: theme.spacing.unit,
-    },
-    extendedIcon: {
-        marginRight: theme.spacing.unit,
-    },
-});
 
 class FilterDialog extends React.Component {
 

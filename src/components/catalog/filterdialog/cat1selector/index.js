@@ -4,32 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
-const styles = theme => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    formControl: {
-        marginLeft: 0,
-        width: '100%',
-        margin: theme.spacing.unit,
-        minWidth: 120,
-        maxWidth: 500,
-    },
-    noLabel: {
-        marginTop: theme.spacing.unit * 3,
-    },
-});
-
-
-const names = [
-    'все',
-    'Другу',
-    'Подруге',
-    'Коллеге',
-    'Родителям',
-];
+import { styles } from './styles';
+import { names } from './names';
 
 class Cat1selector extends React.Component {
     constructor(props) {

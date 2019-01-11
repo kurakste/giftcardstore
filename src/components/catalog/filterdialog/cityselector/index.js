@@ -7,14 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import { connect } from 'react-redux';
-
-const suggestions = [
-    { label: 'Волгоград' },
-    { label: 'Самара' },
-    { label: 'Саратов' },
-    { label: 'Киров' },
-    { label: 'Набережные Челны' },
-];
+import { suggestions } from './suggestions';
 
 function renderInput(inputProps) {
     const { InputProps, classes, ref, ...other } = inputProps;
@@ -79,7 +72,6 @@ function getSuggestions(value) {
         });
 }
 
-
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -110,8 +102,6 @@ const styles = theme => ({
         height: theme.spacing.unit * 2,
     },
 });
-
-
 
 class CitySelector extends Component {
     constructor(props) {
