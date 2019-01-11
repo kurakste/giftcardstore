@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import products from './itemsStub';
-import Prodcard from './Prodcard';
-import FilterDialog from './FilterDialog';
+import Prodcard from './prodcard';
+import FilterDialog from './filterdialog';
+
 
 class Catalog extends Component {
     constructor(props) {

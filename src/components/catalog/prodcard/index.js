@@ -10,43 +10,15 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import { addToFavorite } from '../../actions';
+import { addToFavorite } from '../../../actions';
+import { styles } from './styles';
 
-
-const styles = theme => ({
-    card: {
-        margin: 5,
-        maxWidth: 350,
-        width: '100%',
-        float: 'left',
-    },
-    media: {
-        paddingTop: '100%', // 16:9
-    },
-    actions: {
-        display: 'flex',
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-    avatar: {
-        backgroundColor: red[500],
-    },
-});
 
 class Prodcard extends React.Component {
 
@@ -64,7 +36,7 @@ class Prodcard extends React.Component {
     }
 
     render() {
-        const { classes, product } = this.props;
+        const { product, classes } = this.props;
 
         return (
             <Card className={classes.card}>
@@ -74,11 +46,11 @@ class Prodcard extends React.Component {
                             <FontAwesomeIcon icon={faShoppingCart} size="sm"/>
                         </IconButton>
                     }
-                    title={product.name}
+                    title={ product.name }
                     subheader={ (!product.material) ? 'СЕРТИФИКАТ' : 'ТОВАР' }
                 />
                 <CardMedia
-                    className={classes.media}
+                    className={ classes.media }
                     image={ product.image }
                     title="Paella dish"
                 />
@@ -89,7 +61,7 @@ class Prodcard extends React.Component {
                 </CardContent>
                 <CardActions className={classes.actions} disableActionSpacing>
                     <IconButton  aria-label="Add to favorites">
-                        <FavoriteIcon onClick={this.handleFavoriteClick}/>
+                        <FavoriteIcon onClick={ this.handleFavoriteClick }/>
                     </IconButton>
                     <IconButton aria-label="Share">
                         <ShareIcon />
@@ -98,8 +70,8 @@ class Prodcard extends React.Component {
                         className={classnames(classes.expand, {
                             [classes.expandOpen]: this.state.expanded,
                         })}
-                        onClick={this.handleExpandClick}
-                        aria-expanded={this.state.expanded}
+                        onClick={ this.handleExpandClick }
+                        aria-expanded={ this.state.expanded }
                         aria-label="Show more"
                     >
                         <ExpandMoreIcon />
@@ -134,7 +106,6 @@ const mapStateToProps = function(state) {
 const mapDispatchToProps = (dispatch) => {
     return { dispatch };
 };
-
 
 const connected = connect(mapStateToProps, mapDispatchToProps)(Prodcard);
 

@@ -38,7 +38,7 @@ const names = [
     'все',
 ];
 
-class Cat1selector extends React.Component {
+class Cat2selector extends React.Component {
 
     constructor(props) {
         super(props);
@@ -94,8 +94,8 @@ class Cat1selector extends React.Component {
     }
 }
 
-Cat1selector.propTypes = {
+Cat2selector.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Cat1selector);
+export default withStyles(styles, { withTheme: true })(Cat2selector);

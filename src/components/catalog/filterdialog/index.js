@@ -9,9 +9,9 @@ import Fab from '@material-ui/core/Fab';
 import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //-----------------------------------------------------------------
-import CitySelector from './CitySelector';
-import Cat1selector from './Cat1selector';
-import Cat2selector from './Cat2selector';
+import CitySelector from './cityselector';
+import Cat1selector from './cat1selector';
+import Cat2selector from './cat2selector';
 
 
 const styles = theme => ({
