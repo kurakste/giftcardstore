@@ -4,21 +4,21 @@ import Prodcard from './Prodcard';
 import FilterDialog from './FilterDialog';
 
 class Catalog extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {products: products};
-  }
+    constructor(props) {
+        super(props);
+        this.state = {products: products};
+    }
   
-  render() {
+    render() {
     
-    const cat = this.state.products.map( item => <Prodcard key = { item.id } product = { item } /> );
+        const cat = this.state.products.map( item => <Prodcard key = { item.id } product = { item } /> );
     
-    return (
-      <Fragment>
-        {cat}
-        <FilterDialog />
-      </Fragment>
-    );
-  }
+        return (
+            <Fragment>
+                {cat}
+                <FilterDialog />
+            </Fragment>
+        );
+    }
 }
 export default Catalog;

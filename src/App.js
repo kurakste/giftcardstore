@@ -10,24 +10,48 @@ import Catalog from './components/catalog';
 library.add(faFilter,faShoppingCart );
 
 class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div className="App">
-          <Layout>
-            <Switch>
-              <Route exact path='/' component ={ Mainpage } />
-              <Route exact path='/catalog' component = { Catalog } />
-              <Route exact path='/cards' render={ () => { return (<div> Hi from cards </div>); }} /> 
-              <Route exact path='/support' render={ () => { return (<div> Hi from support </div>); }} />
-              <Route exact path='/feedback' render={ () => { return (<div> Hi from feedback </div>); }} />
-              <Route exact path='/about' render={ () => { return (<div> Hi from about </div>); }} />
-            </Switch>
-          </Layout >
-        </div>
-      </BrowserRouter>
-    );
-  }
+    render() {
+        return (
+            <BrowserRouter>
+                <div className="App">
+                    <Layout>
+                        <Switch>
+                            <Route exact path='/' component ={ Mainpage } />
+                            <Route exact 
+                                path='/catalog' component = { Catalog } 
+                            />
+                            <Route exact 
+                                path='/cards' 
+                                render={ 
+                                    () => { 
+                                        return (<div> Hi from cards </div>); }
+                                } 
+                            /> 
+                            <Route exact 
+                                path='/support' 
+                                render={ () => {
+                                    return (<div> Hi from support </div>); }
+                                } 
+                            />
+                            <Route exact 
+                                path='/feedback' 
+                                render={ () => { 
+                                    return (<div> Hi from feedback </div>); }
+                                } 
+                            />
+                            <Route 
+                                exact 
+                                path='/about' 
+                                render={ () => {
+                                    return (<div> Hi from about </div>); }
+                                } 
+                            />
+                        </Switch>
+                    </Layout >
+                </div>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;

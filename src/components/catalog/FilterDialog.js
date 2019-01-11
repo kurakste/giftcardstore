@@ -15,68 +15,68 @@ import Cat2selector from './Cat2selector';
 
 
 const styles = theme => ({
-  fab_plus: {
-    position: 'fixed',
-    bottom: 10,
-    right: '5%',
-    margin: theme.spacing.unit,
-  },
-  extendedIcon: {
-    marginRight: theme.spacing.unit,
-  },
+    fab_plus: {
+        position: 'fixed',
+        bottom: 10,
+        right: '5%',
+        margin: theme.spacing.unit,
+    },
+    extendedIcon: {
+        marginRight: theme.spacing.unit,
+    },
 });
 
 class FilterDialog extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+        };
 
-    this.handleClickOpen = () => {
-      this.setState({ open: true });
-    };
+        this.handleClickOpen = () => {
+            this.setState({ open: true });
+        };
 
-    this.handleClose = () => {
-      this.setState({ open: false });
-    };
-  }
+        this.handleClose = () => {
+            this.setState({ open: false });
+        };
+    }
 
-  render() {
-    const { classes } = this.props;
-    return (
-      <div>
-        <div>
-          <Fab color="primary" aria-label="Filter" className={classes.fab_plus} onClick={this.handleClickOpen}>
-            <FontAwesomeIcon icon="filter" />
-          </Fab>
-        </div>
+    render() {
+        const { classes } = this.props;
+        return (
+            <div>
+                <div>
+                    <Fab color="primary" aria-label="Filter" className={classes.fab_plus} onClick={this.handleClickOpen}>
+                        <FontAwesomeIcon icon="filter" />
+                    </Fab>
+                </div>
 
-        <Dialog
-          fullWidth = { true }
-          open={this.state.open}
-          onClose={this.handleClose}
-          aria-labelledby="form-dialog-title"
-        >
-          <DialogTitle style =  {{ textAlign: 'center' }} id="form-dialog-title">Фильтры</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
+                <Dialog
+                    fullWidth = { true }
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    aria-labelledby="form-dialog-title"
+                >
+                    <DialogTitle style =  {{ textAlign: 'center' }} id="form-dialog-title">Фильтры</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
               Уточните город:
-            </DialogContentText>
-            <CitySelector />
-            <Cat1selector />
-            <Cat2selector />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+                        </DialogContentText>
+                        <CitySelector />
+                        <Cat1selector />
+                        <Cat2selector />
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.handleClose} color="primary">
               Применить
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </div>
-    );
-  }
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            </div>
+        );
+    }
 }
 
 export default withStyles(styles)(FilterDialog);

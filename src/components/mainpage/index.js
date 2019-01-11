@@ -6,15 +6,15 @@ import Partners from './Partners';
 
 class MainPage extends Component {
 
-  render() {
+    render() {
     
-    return (
-      <Fragment>
-        <Certcardblock />
-        <Consumers />
-        <Partners />
-      </Fragment>
-    );
-  }
+        return (
+            <Fragment>
+                <Certcardblock />
+                <Consumers />
+                <Partners />
+            </Fragment>
+        );
+    }
 }
 export default MainPage;
