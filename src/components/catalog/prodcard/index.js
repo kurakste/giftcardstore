@@ -12,13 +12,15 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import CloseIcon from '@material-ui/icons/Close';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { addToFavorite } from '../../../actions';
 import { styles } from './styles';
-
+import { compose } from 'recompose';
+import { withRouter } from 'react-router-dom'; 
 
 class Prodcard extends React.Component {
 
@@ -36,8 +38,16 @@ class Prodcard extends React.Component {
     }
 
     render() {
-        const { product, classes } = this.props;
-
+        const { product, classes, location: { pathname }} = this.props;
+        let crossIconButtonComponent = null;
+        console.log(pathname);
+        if (pathname === '/favorites') {
+            crossIconButtonComponent= (
+                <IconButton aria-label="Close">
+                    <CloseIcon />
+                </IconButton>
+            );
+        }
         return (
             <Card className={classes.card}>
                 <CardHeader
@@ -66,6 +76,7 @@ class Prodcard extends React.Component {
                     <IconButton aria-label="Share">
                         <ShareIcon />
                     </IconButton>
+                    { crossIconButtonComponent }
                     <IconButton
                         className={classnames(classes.expand, {
                             [classes.expandOpen]: this.state.expanded,
@@ -109,4 +120,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const connected = connect(mapStateToProps, mapDispatchToProps)(Prodcard);
 
-export default withStyles(styles)(connected) ;
+export default compose (
+    withStyles(styles),
+    withRouter
+)(connected);

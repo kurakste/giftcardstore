@@ -11,12 +11,8 @@ class Favorites extends Component {
     }
 
     render() {
-                                         
         const { favorites } = this.props;
-        console.log(`props from constructor: ${ favorites } `);
-        // const { favorites } = this.proops;
         const cat = favorites.map( item => <Prodcard key = { item.id } product = { item } /> );
-    
         return (
             <Fragment>
                 {cat}
@@ -26,7 +22,6 @@ class Favorites extends Component {
 }
 const mapStateToProps = function(state) {
     const { favorites } = state;
-    console.log(favorites);
     return { favorites: favorites };
 };
 
