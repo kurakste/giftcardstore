@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import products from './itemsStub';
+import products from '../../mocks/testItemsForCatalog';
 import Prodcard from './prodcard';
 import FilterDialog from './filterdialog';
 

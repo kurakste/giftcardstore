@@ -28,7 +28,7 @@ class FavoriteIconWithBadge extends Component {
     render() {
         const { classes, favorites } = this.props;
         let badge = '';
-        if ( favorites.length !=0 ) { 
+        if ( favorites.length !==0 ) { 
             badge = (<Badge badgeContent={ favorites.length } color="primary" classes={{ badge: classes.badge }}>
                 <span></span> 
             </Badge>);
