@@ -6,6 +6,7 @@ import { faFilter, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Layout from './components/layout';
 import Mainpage from './components/mainpage';
 import Catalog from './components/catalog';
+import Favorites from './components/favorites';
 
 library.add(faFilter,faShoppingCart );
 
@@ -45,6 +46,12 @@ class App extends Component {
                                 render={ () => {
                                     return (<div> Hi from about </div>); }
                                 } 
+                            />
+
+                            <Route
+                                exact
+                                path='/favorites'
+                                component = { Favorites }
                             />
                         </Switch>
                     </Layout >
