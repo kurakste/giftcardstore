@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
     badge: {
@@ -35,7 +36,9 @@ class FavoriteIconWithBadge extends Component {
         }
 
         return (
+
             <IconButton 
+                component = { Link } to = '/favorites'
                 aria-label="Fav" 
                 color = 'inherit'
                 className ={ classes.icon } >
