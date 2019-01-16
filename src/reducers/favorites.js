@@ -11,7 +11,9 @@ export default function favorites( state = initialState, action ) {
                 action.payload
             ]; 
         } else return state;
-    
+    case 'REMOVE_FROM_FAV':
+        return fav.filter(el => action.payload.id != el.id);
+
     default:
         return state;
     }

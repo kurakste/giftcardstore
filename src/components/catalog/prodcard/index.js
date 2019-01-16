@@ -17,7 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import { addToFavorite } from '../../../actions';
+import { addToFavorite, removeFromFavorite } from '../../../actions';
 import { styles } from './styles';
 import { compose } from 'recompose';
 import { withRouter } from 'react-router-dom'; 
@@ -35,15 +35,20 @@ class Prodcard extends React.Component {
         this.handleFavoriteClick = () => {
             this.props.dispatch(addToFavorite(this.props.product));
         };
+
+        this.handleRemoveFav = () => {
+            console.log(`remove fav click ${this.props.product.id}`);
+            this.props.dispatch(removeFromFavorite(this.props.product));
+        }
+
     }
 
     render() {
         const { product, classes, location: { pathname }} = this.props;
         let crossIconButtonComponent = null;
-        console.log(pathname);
         if (pathname === '/favorites') {
             crossIconButtonComponent= (
-                <IconButton aria-label="Close">
+                <IconButton onClick = { this.handleRemoveFav } aria-label="Close">
                     <CloseIcon />
                 </IconButton>
             );
@@ -70,8 +75,8 @@ class Prodcard extends React.Component {
                     </Typography>
                 </CardContent>
                 <CardActions className={classes.actions} disableActionSpacing>
-                    <IconButton  aria-label="Add to favorites">
-                        <FavoriteIcon onClick={ this.handleFavoriteClick }/>
+                    <IconButton  onClick={ this.handleFavoriteClick } aria-label="Add to favorites">
+                        <FavoriteIcon />
                     </IconButton>
                     <IconButton aria-label="Share">
                         <ShareIcon />
