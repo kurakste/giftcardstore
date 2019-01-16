@@ -37,9 +37,8 @@ class Prodcard extends React.Component {
         };
 
         this.handleRemoveFav = () => {
-            console.log(`remove fav click ${this.props.product.id}`);
             this.props.dispatch(removeFromFavorite(this.props.product));
-        }
+        };
 
     }
 

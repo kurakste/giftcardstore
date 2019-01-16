@@ -5,7 +5,6 @@ const addToFavorite = (product) => {
     };
 };
 
-
 const removeFromFavorite = (product) => {
     return {
         type: 'REMOVE_FROM_FAV',
