@@ -12,9 +12,4 @@ describe('Prodcard component', () => {
         expect(cat.find('WithStyles(FilterDialog)')).toHaveLength(1);   
     });
     
-    it('render five Filter Dialog', () => {
-        const cat = shallow(<Catalog />);
-        cat.setState({ products: products });
-        expect(cat.find('WithStyles(Connect(Prodcard))')).toHaveLength(5);   
-    });
 });
