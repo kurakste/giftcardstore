@@ -1,4 +1,5 @@
-## My test Recact Project
+## Learn react with this project. 
+I learn react with this project. It's kind of ecommerce project. Gift certificate store. 
 
 In the project directory, you can run:
 
